@@ -1,7 +1,8 @@
 # Board Game Picker
 # ---------------------------- IMPORTS ------------------------------- #
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request
 import json
+import random
 
 app = Flask(__name__)
 
@@ -69,8 +70,51 @@ def list_games():
     # Pass the games list to the template
     return render_template("list_games.html", games=games)
 
+# ---------------------------- FILTER LOGIC ------------------------------- #
+def filter_games_logic(num_players, selected_categories):
+    try:
+        with open("data.json", "r") as f:
+            content = f.read().strip()
+            if content:
+                games = json.loads(content)
+            else:
+                games = []
+    except FileNotFoundError:
+        games = []
+
+    filtered_games = []
+
+    exclusive_pairs = [
+        ("simple", "complicated"),
+        ("quick", "long"),
+        ("couch", "table"),
+    ]
+
+    for game in games:
+        if game["min_players"] <= num_players <= game["max_players"]:
+            tags = game["tags"]
+
+            # Handle mutually exclusive logic
+            is_excluded = False
+            for a, b in exclusive_pairs:
+                if a in selected_categories and b in tags:
+                    is_excluded = True
+                if b in selected_categories and a in tags:
+                    is_excluded = True
+            if is_excluded:
+                continue
+
+            # If categories are selected, game must match at least one
+            if selected_categories:
+                if any(cat in tags for cat in selected_categories):
+                    filtered_games.append(game)
+            else:
+                filtered_games.append(game)
+
+    return filtered_games
+
+
 # ---------------------------- FILTER GAMES ------------------------------- #
-# Show Filter Games Page
 @app.route("/filter", methods=["GET", "POST"])
 def filter_games():
     filtered_games = []
@@ -78,45 +122,10 @@ def filter_games():
     selected_categories = []
 
     if request.method == "POST":
-        # Get form data
         selected_num_players = int(request.form.get("numplayers"))
-        selected_categories = request.form.getlist("category")  # list of selected categories
+        selected_categories = request.form.getlist("category")
 
-        # Read games from JSON
-        try:
-            with open("data.json", "r") as f:
-                content = f.read().strip()
-                if content:
-                    games = json.loads(content)
-                else:
-                    games = []
-        except FileNotFoundError:
-            games = []
-
-        # Define mutually exclusive pairs
-        exclusive_pairs = [
-            ("simple", "complicated"),
-            ("quick", "long"),
-            ("couch", "table")
-        ]
-
-        # Determine categories to exclude
-        exclude_categories = set()
-        for cat1, cat2 in exclusive_pairs:
-            if cat1 in selected_categories:
-                exclude_categories.add(cat2)
-            elif cat2 in selected_categories:
-                exclude_categories.add(cat1)
-
-        # Filter games
-        for game in games:
-            if game["min_players"] <= selected_num_players <= game["max_players"]:
-                if selected_categories:
-                    if any(cat in game["tags"] for cat in selected_categories):
-                        if not any(cat in game["tags"] for cat in exclude_categories):
-                            filtered_games.append(game)
-                else:
-                    filtered_games.append(game)
+        filtered_games = filter_games_logic(selected_num_players, selected_categories)
 
     return render_template(
         "filter_games.html",
@@ -126,12 +135,29 @@ def filter_games():
     )
 
 
-
 # ---------------------------- PICK A RANDOM GAME ------------------------------- #
-# Show Pick Random Game Page
-@app.route("/random")
+@app.route("/random", methods=["GET", "POST"])
 def random_game():
-    return render_template("random_game.html")
+    random_game = None
+    selected_num_players = None
+    selected_categories = []
+
+    if request.method == "POST":
+        selected_num_players = int(request.form.get("numplayers"))
+        selected_categories = request.form.getlist("category")
+
+        filtered_games = filter_games_logic(selected_num_players, selected_categories)
+
+        if filtered_games:
+            random_game = random.choice(filtered_games)
+
+    return render_template(
+        "random_game.html",
+        random_game=random_game,
+        selected_num_players=selected_num_players,
+        selected_categories=selected_categories
+    )
+
 
 # ---------------------------------------------------------- #
 if __name__ == "__main__":

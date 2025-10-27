@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Board Game Picker</title>
+</head>
+<body>
+    <h1>Filter games by Categories</h1>
+
+
+    <form method="POST" action="/filter">
+
+        <!-- Players -->
+        <label>How many players you have?</label><br>
+        <input type="number" min="1" name="numplayers" required><br><br>
+
+
+        <!-- Game Categories -->
+        <label>Choose the Game Categories</label><br>
+        <input type="checkbox" id="category-simple" name="category" value="simple">
+        <label for="category-simple">Simple</label><br>
+
+        <input type="checkbox" id="category-complicated" name="category" value="complicated">
+        <label for="category-complicated">Complicated</label><br>
+
+        <input type="checkbox" id="category-quick" name="category" value="quick">
+        <label for="category-quick">Quick</label><br>
+
+        <input type="checkbox" id="category-long" name="category" value="long">
+        <label for="category-long">Long</label><br>
+
+        <input type="checkbox" id="category-cooperative" name="category" value="cooperative">
+        <label for="category-cooperative">Cooperative</label><br>
+
+        <input type="checkbox" id="category-party" name="category" value="party">
+        <label for="category-party">Party Game</label><br>
+
+        <input type="checkbox" id="category-frenetic" name="category" value="frenetic">
+        <label for="category-frenetic">Frenetic</label><br>
+
+        <input type="checkbox" id="category-table" name="category" value="table">
+        <label for="category-table">Needs To Be Played On A Table</label><br>
+
+        <input type="checkbox" id="category-couch" name="category" value="couch">
+        <label for="category-couch">Can Be Played On The Couch</label><br><br>
+
+        <!-- Submit -->
+        <button type="submit">Submit</button> <br><br>
+        <a href="/">Back to Home</a>
+    </form>
+
+    {% if filtered_games %}
+    <p>Showing results for: {{ selected_num_players }} players, in categories:
+        {% for cat in selected_categories %}{{ cat }}{% if not loop.last %}, {% endif %}{% endfor %}
+    </p><br>
+    {% endif %}
+
+
+    {% if filtered_games %}
+    <h2>Filtered Games:</h2>
+    <table border="1" cellpadding="5" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Game Name</th>
+                <th>Players</th>
+                <th>Categories</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for game in filtered_games %}
+            <tr>
+                <td>{{ game.name }}</td>
+                <td>{{ game.min_players }} - {{ game.max_players }}</td>
+                <td>{{ ", ".join(game.tags) }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+
+</body>
+</html>

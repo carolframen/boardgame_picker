@@ -13,10 +13,6 @@ def index():
 
 # ---------------------------- ADD NEW GAME ------------------------------- #
 # Show Add Game Page
-@app.route("/add")
-def add_game_page():
-    return render_template("add_game.html")
-
 @app.route("/add", methods=["GET", "POST"])
 def add_game():
     if request.method == "POST":
@@ -75,9 +71,61 @@ def list_games():
 
 # ---------------------------- FILTER GAMES ------------------------------- #
 # Show Filter Games Page
-@app.route("/filter")
+@app.route("/filter", methods=["GET", "POST"])
 def filter_games():
-    return render_template("filter_games.html")
+    filtered_games = []
+    selected_num_players = None
+    selected_categories = []
+
+    if request.method == "POST":
+        # Get form data
+        selected_num_players = int(request.form.get("numplayers"))
+        selected_categories = request.form.getlist("category")  # list of selected categories
+
+        # Read games from JSON
+        try:
+            with open("data.json", "r") as f:
+                content = f.read().strip()
+                if content:
+                    games = json.loads(content)
+                else:
+                    games = []
+        except FileNotFoundError:
+            games = []
+
+        # Define mutually exclusive pairs
+        exclusive_pairs = [
+            ("simple", "complicated"),
+            ("quick", "long"),
+            ("couch", "table")
+        ]
+
+        # Determine categories to exclude
+        exclude_categories = set()
+        for cat1, cat2 in exclusive_pairs:
+            if cat1 in selected_categories:
+                exclude_categories.add(cat2)
+            elif cat2 in selected_categories:
+                exclude_categories.add(cat1)
+
+        # Filter games
+        for game in games:
+            if game["min_players"] <= selected_num_players <= game["max_players"]:
+                if selected_categories:
+                    if any(cat in game["tags"] for cat in selected_categories):
+                        if not any(cat in game["tags"] for cat in exclude_categories):
+                            filtered_games.append(game)
+                else:
+                    filtered_games.append(game)
+
+    return render_template(
+        "filter_games.html",
+        filtered_games=filtered_games,
+        selected_num_players=selected_num_players,
+        selected_categories=selected_categories
+    )
+
+
 
 # ---------------------------- PICK A RANDOM GAME ------------------------------- #
 # Show Pick Random Game Page

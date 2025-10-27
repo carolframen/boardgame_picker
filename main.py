@@ -59,7 +59,19 @@ def add_game():
 # Show List Games Page
 @app.route("/list")
 def list_games():
-    return render_template("list_games.html")
+    # Read existing data safely
+    try:
+        with open("data.json", "r") as f:
+            content = f.read().strip()
+            if content:
+                games = json.loads(content)
+            else:
+                games = []
+    except FileNotFoundError:
+        games = []
+
+    # Pass the games list to the template
+    return render_template("list_games.html", games=games)
 
 # ---------------------------- FILTER GAMES ------------------------------- #
 # Show Filter Games Page

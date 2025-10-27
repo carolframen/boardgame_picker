@@ -1,0 +1,687 @@
+[
+    {
+        "name": "Cranium",
+        "min_players": 4,
+        "max_players": 100,
+        "tags": [
+            "simple",
+            "quick",
+            "party",
+            "couch"
+        ]
+    },
+    {
+        "name": "Imagem & A\u00e7\u00e3o",
+        "min_players": 4,
+        "max_players": 100,
+        "tags": [
+            "simple",
+            "quick",
+            "party",
+            "couch"
+        ]
+    },
+    {
+        "name": "Pandemic",
+        "min_players": 2,
+        "max_players": 5,
+        "tags": [
+            "complicated",
+            "long",
+            "cooperative",
+            "table"
+        ]
+    },
+    {
+        "name": "Perfil",
+        "min_players": 2,
+        "max_players": 100,
+        "tags": [
+            "simple",
+            "long",
+            "couch"
+        ]
+    },
+    {
+        "name": "Catan",
+        "min_players": 3,
+        "max_players": 4,
+        "tags": [
+            "complicated",
+            "long",
+            "table"
+        ]
+    },
+    {
+        "name": "Telestration",
+        "min_players": 4,
+        "max_players": 100,
+        "tags": [
+            "simple",
+            "quick",
+            "party",
+            "couch"
+        ]
+    },
+    {
+        "name": "Dungeon!",
+        "min_players": 1,
+        "max_players": 8,
+        "tags": [
+            "complicated",
+            "long",
+            "table"
+        ]
+    },
+    {
+        "name": "Enciclopedia",
+        "min_players": 3,
+        "max_players": 6,
+        "tags": [
+            "simple",
+            "long",
+            "table"
+        ]
+    },
+    {
+        "name": "Interpol",
+        "min_players": 3,
+        "max_players": 6,
+        "tags": [
+            "complicated",
+            "long",
+            "table"
+        ]
+    },
+    {
+        "name": "Quest",
+        "min_players": 2,
+        "max_players": 6,
+        "tags": [
+            "simple",
+            "quick",
+            "couch"
+        ]
+    },
+    {
+        "name": "Detetiva",
+        "min_players": 2,
+        "max_players": 6,
+        "tags": [
+            "simple",
+            "long",
+            "table"
+        ]
+    },
+    {
+        "name": "Hippo",
+        "min_players": 2,
+        "max_players": 4,
+        "tags": [
+            "simple",
+            "quick",
+            "table"
+        ]
+    },
+    {
+        "name": "Taco Gato",
+        "min_players": 2,
+        "max_players": 100,
+        "tags": [
+            "simple",
+            "quick",
+            "frenetic",
+            "table"
+        ]
+    },
+    {
+        "name": "Misty",
+        "min_players": 2,
+        "max_players": 4,
+        "tags": [
+            "simple",
+            "quick",
+            "table"
+        ]
+    },
+    {
+        "name": "Clain",
+        "min_players": 2,
+        "max_players": 2,
+        "tags": [
+            "simple",
+            "quick",
+            "table"
+        ]
+    },
+    {
+        "name": "Fungi",
+        "min_players": 2,
+        "max_players": 2,
+        "tags": [
+            "simple",
+            "quick",
+            "table"
+        ]
+    },
+    {
+        "name": "Saboteur",
+        "min_players": 3,
+        "max_players": 10,
+        "tags": [
+            "simple",
+            "long",
+            "table"
+        ]
+    },
+    {
+        "name": "Similo",
+        "min_players": 2,
+        "max_players": 100,
+        "tags": [
+            "simple",
+            "quick",
+            "cooperative",
+            "table"
+        ]
+    },
+    {
+        "name": "Dragomino",
+        "min_players": 2,
+        "max_players": 4,
+        "tags": [
+            "simple",
+            "quick",
+            "table"
+        ]
+    },
+    {
+        "name": "GAP",
+        "min_players": 2,
+        "max_players": 6,
+        "tags": [
+            "simple",
+            "quick",
+            "table"
+        ]
+    },
+    {
+        "name": "Knock Knock Dungeon",
+        "min_players": 1,
+        "max_players": 6,
+        "tags": [
+            "simple",
+            "quick",
+            "cooperative",
+            "table"
+        ]
+    },
+    {
+        "name": "Color Addict",
+        "min_players": 2,
+        "max_players": 6,
+        "tags": [
+            "simple",
+            "quick",
+            "frenetic",
+            "table"
+        ]
+    },
+    {
+        "name": "Black Stories",
+        "min_players": 2,
+        "max_players": 100,
+        "tags": [
+            "simple",
+            "quick",
+            "cooperative",
+            "couch"
+        ]
+    },
+    {
+        "name": "Shimp",
+        "min_players": 3,
+        "max_players": 100,
+        "tags": [
+            "simple",
+            "quick",
+            "couch"
+        ]
+    },
+    {
+        "name": "Anomia",
+        "min_players": 3,
+        "max_players": 8,
+        "tags": [
+            "simple",
+            "quick",
+            "frenetic",
+            "table"
+        ]
+    },
+    {
+        "name": "Sushi Go",
+        "min_players": 2,
+        "max_players": 5,
+        "tags": [
+            "simple",
+            "quick",
+            "table"
+        ]
+    },
+    {
+        "name": "Mexican Train",
+        "min_players": 2,
+        "max_players": 8,
+        "tags": [
+            "simple",
+            "quick",
+            "table"
+        ]
+    },
+    {
+        "name": "Time's Up",
+        "min_players": 4,
+        "max_players": 100,
+        "tags": [
+            "simple",
+            "quick",
+            "party",
+            "couch"
+        ]
+    },
+    {
+        "name": "Oh My Goods",
+        "min_players": 2,
+        "max_players": 4,
+        "tags": [
+            "complicated",
+            "long",
+            "table"
+        ]
+    },
+    {
+        "name": "Blitz",
+        "min_players": 2,
+        "max_players": 4,
+        "tags": [
+            "simple",
+            "quick",
+            "frenetic",
+            "table"
+        ]
+    },
+    {
+        "name": "The Mind",
+        "min_players": 2,
+        "max_players": 100,
+        "tags": [
+            "simple",
+            "quick",
+            "cooperative",
+            "table"
+        ]
+    },
+    {
+        "name": "Sem Censura",
+        "min_players": 4,
+        "max_players": 100,
+        "tags": [
+            "simple",
+            "quick",
+            "couch"
+        ]
+    },
+    {
+        "name": "Lord Of The Rings Trick Game",
+        "min_players": 1,
+        "max_players": 4,
+        "tags": [
+            "simple",
+            "quick",
+            "cooperative",
+            "table"
+        ]
+    },
+    {
+        "name": "Pandemic Star Wars",
+        "min_players": 2,
+        "max_players": 5,
+        "tags": [
+            "complicated",
+            "long",
+            "cooperative",
+            "table"
+        ]
+    },
+    {
+        "name": "Ito",
+        "min_players": 2,
+        "max_players": 8,
+        "tags": [
+            "simple",
+            "quick",
+            "table"
+        ]
+    },
+    {
+        "name": "Hanabi",
+        "min_players": 2,
+        "max_players": 5,
+        "tags": [
+            "simple",
+            "quick",
+            "cooperative",
+            "table"
+        ]
+    },
+    {
+        "name": "Moose MJaster",
+        "min_players": 3,
+        "max_players": 100,
+        "tags": [
+            "simple",
+            "quick",
+            "party",
+            "table"
+        ]
+    },
+    {
+        "name": "Telma",
+        "min_players": 4,
+        "max_players": 8,
+        "tags": [
+            "simple",
+            "party",
+            "frenetic",
+            "table"
+        ]
+    },
+    {
+        "name": "S\u00f3 Uma",
+        "min_players": 3,
+        "max_players": 7,
+        "tags": [
+            "simple",
+            "quick",
+            "cooperative",
+            "couch"
+        ]
+    },
+    {
+        "name": "Exploding Kittens",
+        "min_players": 2,
+        "max_players": 5,
+        "tags": [
+            "simple",
+            "quick",
+            "table"
+        ]
+    },
+    {
+        "name": "Sintonia",
+        "min_players": 2,
+        "max_players": 100,
+        "tags": [
+            "simple",
+            "long",
+            "party",
+            "table"
+        ]
+    },
+    {
+        "name": "Codigo Secreto",
+        "min_players": 4,
+        "max_players": 100,
+        "tags": [
+            "simple",
+            "quick",
+            "party",
+            "table"
+        ]
+    },
+    {
+        "name": "Shadows Amsterdam",
+        "min_players": 2,
+        "max_players": 100,
+        "tags": [
+            "simple",
+            "quick",
+            "party",
+            "table"
+        ]
+    },
+    {
+        "name": "Mysterium",
+        "min_players": 2,
+        "max_players": 8,
+        "tags": [
+            "simple",
+            "long",
+            "cooperative",
+            "table"
+        ]
+    },
+    {
+        "name": "Scotland Yard",
+        "min_players": 2,
+        "max_players": 6,
+        "tags": [
+            "simple",
+            "long",
+            "table"
+        ]
+    },
+    {
+        "name": "Estalo",
+        "min_players": 2,
+        "max_players": 5,
+        "tags": [
+            "simple",
+            "quick",
+            "table"
+        ]
+    },
+    {
+        "name": "Carcassone",
+        "min_players": 2,
+        "max_players": 5,
+        "tags": [
+            "simple",
+            "long",
+            "table"
+        ]
+    },
+    {
+        "name": "Catch the Vibe",
+        "min_players": 3,
+        "max_players": 100,
+        "tags": [
+            "simple",
+            "quick",
+            "cooperative",
+            "party",
+            "table"
+        ]
+    },
+    {
+        "name": "Entrelinhas",
+        "min_players": 2,
+        "max_players": 100,
+        "tags": [
+            "simple",
+            "quick",
+            "table"
+        ]
+    },
+    {
+        "name": "No Objects",
+        "min_players": 3,
+        "max_players": 6,
+        "tags": [
+            "simple",
+            "quick",
+            "table"
+        ]
+    },
+    {
+        "name": "Unstable Unicorns",
+        "min_players": 2,
+        "max_players": 8,
+        "tags": [
+            "simple",
+            "quick",
+            "table"
+        ]
+    },
+    {
+        "name": "Can't Say Um",
+        "min_players": 4,
+        "max_players": 100,
+        "tags": [
+            "simple",
+            "quick",
+            "party",
+            "frenetic",
+            "table"
+        ]
+    },
+    {
+        "name": "Coup",
+        "min_players": 2,
+        "max_players": 6,
+        "tags": [
+            "simple",
+            "long",
+            "couch"
+        ]
+    },
+    {
+        "name": "Say My Name",
+        "min_players": 2,
+        "max_players": 100,
+        "tags": [
+            "simple",
+            "quick",
+            "party",
+            "frenetic",
+            "couch"
+        ]
+    },
+    {
+        "name": "Warewolf",
+        "min_players": 4,
+        "max_players": 100,
+        "tags": [
+            "simple",
+            "long",
+            "party",
+            "couch"
+        ]
+    },
+    {
+        "name": "Mine Turtle",
+        "min_players": 2,
+        "max_players": 100,
+        "tags": [
+            "simple",
+            "quick",
+            "party",
+            "couch"
+        ]
+    },
+    {
+        "name": "Flux",
+        "min_players": 2,
+        "max_players": 6,
+        "tags": [
+            "simple",
+            "quick",
+            "table"
+        ]
+    },
+    {
+        "name": "That's Not A Hat",
+        "min_players": 3,
+        "max_players": 100,
+        "tags": [
+            "simple",
+            "quick",
+            "table"
+        ]
+    },
+    {
+        "name": "N\u00e3o Pode",
+        "min_players": 2,
+        "max_players": 100,
+        "tags": [
+            "simple",
+            "quick",
+            "party",
+            "frenetic",
+            "couch"
+        ]
+    },
+    {
+        "name": "Tapple",
+        "min_players": 2,
+        "max_players": 100,
+        "tags": [
+            "simple",
+            "quick",
+            "frenetic",
+            "table"
+        ]
+    },
+    {
+        "name": "Ticket To Ride",
+        "min_players": 2,
+        "max_players": 5,
+        "tags": [
+            "complicated",
+            "long",
+            "table"
+        ]
+    },
+    {
+        "name": "Arkhanos",
+        "min_players": 2,
+        "max_players": 4,
+        "tags": [
+            "complicated",
+            "long",
+            "table"
+        ]
+    },
+    {
+        "name": "Big Book Of Magic",
+        "min_players": 2,
+        "max_players": 5,
+        "tags": [
+            "complicated",
+            "long",
+            "table"
+        ]
+    },
+    {
+        "name": "Lord Of The Rings Story Mode",
+        "min_players": 1,
+        "max_players": 4,
+        "tags": [
+            "complicated",
+            "long",
+            "cooperative",
+            "table"
+        ]
+    },
+    {
+        "name": "Paper Dungeons",
+        "min_players": 1,
+        "max_players": 8,
+        "tags": [
+            "complicated",
+            "long",
+            "table"
+        ]
+    }
+]

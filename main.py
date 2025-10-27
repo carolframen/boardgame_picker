@@ -1,27 +1,39 @@
-# Board Games
+# Board Game Picker
 # ---------------------------- IMPORTS ------------------------------- #
 from flask import Flask, render_template, request, jsonify
 import json
 
 app = Flask(__name__)
 
-# Home page
+# ---------------------------- HOME PAGE ------------------------------- #
+# Show Home Page
 @app.route("/")
 def index():
     return render_template("index.html")
 
-# Handle form submission
-@app.route("/search", methods=["POST"])
-def search():
-    user_input = request.form["query"]
+# ---------------------------- ADD NEW GAME ------------------------------- #
+# Show Add Game Page
+@app.route("/add")
+def add_game_page():
+    return render_template("add_game.html")
+# ---------------------------- SHOW GAME LIST ------------------------------- #
+# Show List Games Page
+@app.route("/list")
+def list_games():
+    return render_template("list_games.html")
 
-    with open("data.json") as f:
-        data = json.load(f)
+# ---------------------------- FILTER GAMES ------------------------------- #
+# Show Filter Games Page
+@app.route("/filter")
+def list_games():
+    return render_template("filter_games.html")
 
-    # Get value from JSON (or "Not found")
-    result = data.get(user_input, "Not found")
+# ---------------------------- PICK A RANDOM GAME ------------------------------- #
+# Show Pick Random Game Page
+@app.route("/random")
+def list_games():
+    return render_template("random_game.html")
 
-    return jsonify({"result": result})
-
+# ---------------------------------------------------------- #
 if __name__ == "__main__":
     app.run(debug=True)

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Board Game Picker</title>
+</head>
+<body>
+    <h1>Add a Game</h1>
+
+    <form method="POST" action="/add">
+        <!-- Game Name -->
+        <label>Game Name</label><br>
+        <input type="text" name="gname"required><br><br>
+
+        <!-- Min Players -->
+        <label>Minimum Number of Players</label><br>
+        <input type="number" min="1" name="minplayers" required><br><br>
+
+        <!-- Max Players -->
+        <label>Maximum Number of Players</label><br>
+        <input type="number" min="1 " name="maxplayers" required><br><br>
+
+        <!-- Game Categories -->
+        <label>Choose at least one Game Category</label><br>
+        <input type="checkbox" id="category-simple" name="category" value="simple">
+        <label for="category-simple">Simple</label><br>
+
+        <input type="checkbox" id="category-complicated" name="category" value="complicated">
+        <label for="category-complicated">Complicated</label><br>
+
+        <input type="checkbox" id="category-quick" name="category" value="quick">
+        <label for="category-quick">Quick</label><br>
+
+        <input type="checkbox" id="category-long" name="category" value="long">
+        <label for="category-long">Long</label><br>
+
+        <input type="checkbox" id="category-cooperative" name="category" value="cooperative">
+        <label for="category-cooperative">Cooperative</label><br>
+
+        <input type="checkbox" id="category-party" name="category" value="party">
+        <label for="category-party">Party Game</label><br>
+
+        <input type="checkbox" id="category-frenetic" name="category" value="frenetic">
+        <label for="category-frenetic">Frenetic</label><br>
+
+        <input type="checkbox" id="category-table" name="category" value="table">
+        <label for="category-table">Needs To Be Played On A Table</label><br>
+
+        <input type="checkbox" id="category-couch" name="category" value="couch">
+        <label for="category-couch">Can Be Played On The Couch</label><br><br>
+
+        <!-- Submit -->
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

@@ -4,7 +4,9 @@ from flask import Flask, render_template, request
 import json
 import random
 
+# ----------------------------------------------------------- #
 app = Flask(__name__)
+
 
 # ---------------------------- HOME PAGE ------------------------------- #
 # Show Home Page
@@ -12,8 +14,7 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-# ---------------------------- ADD NEW GAME ------------------------------- #
-# Show Add Game Page
+# ---------------------------- ADD GAME ------------------------------- #
 @app.route("/add", methods=["GET", "POST"])
 def add_game():
     if request.method == "POST":
@@ -22,6 +23,12 @@ def add_game():
         min_players = int(request.form.get("minplayers"))
         max_players = int(request.form.get("maxplayers"))
         categories = request.form.getlist("category")  # list of selected checkboxes
+        auth_word = request.form.get("auth_word")
+
+        # Check secret word before adding
+        SECRET_WORD = "mystery"
+        if auth_word != SECRET_WORD:
+            return render_template("add_game.html", message="❌ Unauthorized: wrong word.")
 
         # Read existing data safely
         try:
@@ -47,13 +54,13 @@ def add_game():
             json.dump(games, f, indent=4)
 
         # Show success message on the same page
-        return render_template("add_game.html", message="Game added successfully!")
+        return render_template("add_game.html", message="✅ Game added successfully!")
 
     # GET request just shows the form
     return render_template("add_game.html")
 
+
 # ---------------------------- SHOW GAME LIST ------------------------------- #
-# Show List Games Page
 @app.route("/list")
 def list_games():
     # Read existing data safely

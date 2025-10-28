@@ -2,70 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Board Game Picker</title>
+    <title>Random Board Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Pick a random game</h1>
-
-
-    <form method="POST" action="/random">
-
-        <!-- Players -->
-        <label>How many players you have?</label><br>
-        <input type="number" min="1" name="numplayers" required><br><br>
-
-
-        <!-- Game Categories -->
-        <label>Choose the Game Categories</label><br>
-        <input type="checkbox" id="category-simple" name="category" value="simple">
-        <label for="category-simple">Simple</label><br>
-
-        <input type="checkbox" id="category-complicated" name="category" value="complicated">
-        <label for="category-complicated">Complicated</label><br>
-
-        <input type="checkbox" id="category-quick" name="category" value="quick">
-        <label for="category-quick">Quick</label><br>
-
-        <input type="checkbox" id="category-long" name="category" value="long">
-        <label for="category-long">Long</label><br>
-
-        <input type="checkbox" id="category-cooperative" name="category" value="cooperative">
-        <label for="category-cooperative">Cooperative</label><br>
-
-        <input type="checkbox" id="category-party" name="category" value="party">
-        <label for="category-party">Party Game</label><br>
-
-        <input type="checkbox" id="category-frenetic" name="category" value="frenetic">
-        <label for="category-frenetic">Frenetic</label><br>
-
-        <input type="checkbox" id="category-table" name="category" value="table">
-        <label for="category-table">Needs To Be Played On A Table</label><br>
-
-        <input type="checkbox" id="category-couch" name="category" value="couch">
-        <label for="category-couch">Can Be Played On The Couch</label><br><br>
-
-        <!-- Submit -->
-        <button type="submit">Submit</button> <br><br>
-        <a href="/">Back to Home</a>
-    </form>
+    <h1>Pick a Random Game</h1>
 
     {% if random_game %}
-    <h2>Selected Game:</h2>
-    <table border="1">
-        <tr>
-            <th>Name</th>
-            <th>Players</th>
-            <th>Categories</th>
-        </tr>
-        <tr>
-            <td>{{ random_game.name }}</td>
-            <td>{{ random_game.min_players }} - {{ random_game.max_players }}</td>
-            <td>{{ random_game.tags | join(', ') }}</td>
-        </tr>
-    </table>
-    {% elif selected_num_players %}
-        <p>No games found matching your criteria.</p>
+    <div class="card-container">
+        <div class="game-card">
+            <h2>{{ random_game.name }}</h2>
+            <p><strong>Players:</strong> {{ random_game.min_players }} – {{ random_game.max_players }}</p>
+            <p><strong>Categories:</strong> {{ ", ".join(random_game.tags) }}</p>
+        </div>
+    </div>
+    <br>
     {% endif %}
 
+    <form method="POST" action="/random">
+        <label>Number of Players</label>
+        <input type="number" name="numplayers" min="1" required>
+
+        <label>Choose Game Categories</label>
+        <div class="checkbox-group">
+            <label><input type="checkbox" name="category" value="simple"> Simple</label>
+            <label><input type="checkbox" name="category" value="complicated"> Complicated</label>
+            <label><input type="checkbox" name="category" value="quick"> Quick</label>
+            <label><input type="checkbox" name="category" value="long"> Long</label>
+            <label><input type="checkbox" name="category" value="cooperative"> Cooperative</label>
+            <label><input type="checkbox" name="category" value="party"> Party Game</label>
+            <label><input type="checkbox" name="category" value="frenetic"> Frenetic</label>
+            <label><input type="checkbox" name="category" value="table"> Needs To Be Played On A Table</label>
+            <label><input type="checkbox" name="category" value="couch"> Can Be Played On The Couch</label>
+        </div>
+
+        <button type="submit">Submit</button><br><br>
+        <a class="back-link" href="/">← Back to Home</a>
+    </form>
 </body>
 </html>
